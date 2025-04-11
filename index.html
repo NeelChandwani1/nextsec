@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcanium | Blockchain Property Revolution</title>
+    <title>Arcanium | Real Estate</title>
     <style>
+        /* ===== Base Styles ===== */
         :root {
             --black: #111;
             --white: #fff;
@@ -28,6 +29,7 @@
             padding: 0 40px;
         }
 
+        /* ===== Typography ===== */
         h1 {
             font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 700;
@@ -55,12 +57,29 @@
             font-weight: 500;
             margin-bottom: 1rem;
         }
-        p {
+        p, li {
             font-size: 1.1rem;
             max-width: 720px;
             opacity: 0.9;
         }
+        ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 30px;
+        }
+        li:before {
+            content: '+';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--black);
+        }
 
+        /* ===== Hero Section ===== */
         .hero {
             height: 100vh;
             min-height: 800px;
@@ -69,15 +88,6 @@
             justify-content: center;
             border-bottom: 1px solid var(--black);
             position: relative;
-        }
-        .hero-title {
-            position: relative;
-            z-index: 2;
-        }
-        .hero-title span {
-            display: block;
-            font-weight: 300;
-            letter-spacing: 0;
         }
         .hero-bg-text {
             position: absolute;
@@ -90,167 +100,124 @@
             user-select: none;
             bottom: -15vw;
             right: -5vw;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .process {
+        /* ===== Content Sections ===== */
+        .section {
             padding: 120px 0;
         }
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-top: 80px;
-        }
-        .process-card {
-            position: relative;
-            padding-top: 60px;
-        }
-        .process-number {
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 4rem;
-            font-weight: 800;
-            opacity: 0.1;
-            line-height: 1;
-        }
-        .process-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        .process-card p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-
-        .features {
+        .dark-section {
             background: var(--black);
             color: var(--white);
-            padding: 140px 0;
         }
-        .features h2:after {
+        .dark-section h2:after {
             background: var(--white);
         }
-        .features-grid {
+        .grid-2col {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
             margin-top: 60px;
         }
-        .feature-card {
-            border-left: 2px solid var(--white);
-            padding-left: 30px;
-            transition: transform 0.3s;
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
-        .feature-card:hover {
-            transform: translateX(10px);
+        .benefit-card {
+            border-left: 2px solid var(--black);
+            padding-left: 20px;
         }
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+        .dark-section .benefit-card {
+            border-left-color: var(--white);
         }
 
+        /* ===== Animations ===== */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
         }
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
 
+        /* ===== Responsive ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 0 20px;
             }
-            .process-grid, .features-grid {
-                gap: 40px;
+            .grid-2col, .benefits-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Hero Section -->
     <section class="hero container">
-        <div class="hero-title">
-            <h1>About Aracnium</h1>
-            <h1><span>Tokenizing Real Estate</span></h1>
-        </div>
-        <p>Arcanium aims to revolutionise property transactions and mortgage arrangements globally using blockchain technology. By eliminating intermediaries, reducing transaction costs, and providing a transparent and secure platform, Arcanium plans to make real estate transactions more accessible and efficient. Our solution addresses key issues in both high-income countries (HICs) and low-income countries (LICs), including the challenges of proving property ownership, accessing mortgages, and navigating confusing legal frameworks.</p>
-        <div class="hero-bg-text floating">NFT</div>
+        <h1>ARCANIUM</h1>
+        <p>Revolutionising property transactions and mortgage arrangements globally using blockchain technology</p>
+        <div class="hero-bg-text">RE</div> <!-- RE for Real Estate -->
     </section>
 
-    <section class="process container">
-        <h2>Tokenization Process</h2>
-        <p>Converting physical assets into liquid digital tokens through our secure blockchain infrastructure</p>
-        
-        <div class="process-grid">
-            <div class="process-card">
-                <div class="process-number">01</div>
-                <h3>Asset Valuation</h3>
-                <p>Certified appraisal and legal verification by our network of experts</p>
-            </div>
-            <div class="process-card">
-                <div class="process-number">02</div>
-                <h3>NFT Minting</h3>
-                <p>Creation of immutable digital twins on the blockchain</p>
-            </div>
-            <div class="process-card">
-                <div class="process-number">03</div>
-                <h3>Market Listing</h3>
-                <p>Global exposure on our decentralized trading platform</p>
-            </div>
-            <div class="process-card">
-                <div class="process-number">04</div>
-                <h3>Smart Execution</h3>
-                <p>Automated contract fulfillment with real-time settlement</p>
-            </div>
-        </div>
+    <!-- About Section -->
+    <section class="section container">
+        <h2>About Arcanium</h2>
+        <p>By eliminating intermediaries, reducing transaction costs, and providing a transparent and secure platform, Arcanium plans to make real estate transactions more accessible and efficient. Our solution addresses key issues in both high-income countries (HICs) and low-income countries (LICs), including the challenges of proving property ownership, accessing mortgages, and navigating confusing legal frameworks.</p>
     </section>
 
-    <section class="features container">
-        <h2>Why Arcanium</h2>
-        <p>Redefining real estate through decentralization and transparency</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>72% Faster</h3>
-                <p>Transaction times reduced from weeks to hours</p>
+    <!-- Benefits Section -->
+    <section class="section dark-section container">
+        <h2>Key Benefits</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Reduce Fees</h3>
+                <p>Cut transaction costs by up to 90% compared to traditional methods</p>
             </div>
-            <div class="feature-card">
-                <h3>90% Cost Cut</h3>
-                <p>Elimination of intermediary fees</p>
+            <div class="benefit-card">
+                <h3>Higher Profits</h3>
+                <p>Maximize returns by eliminating unnecessary middlemen</p>
             </div>
-            <div class="feature-card">
-                <h3>100% Transparent</h3>
-                <p>Immutable audit trail for all transactions</p>
+            <div class="benefit-card">
+                <h3>Prevent Complexity</h3>
+                <p>Streamlined processes reduce bureaucratic hurdles</p>
             </div>
-            <div class="feature-card">
-                <h3>24/7 Global</h3>
-                <p>Borderless access to property markets</p>
+            <div class="benefit-card">
+                <h3>Ensure Compliance</h3>
+                <p>Built-in regulatory adherence for all transactions</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Eliminate Intermediaries</h3>
+                <p>Direct peer-to-peer transactions with smart contracts</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Reduce Paper Waste</h3>
+                <p>Fully digital process eliminates physical documentation</p>
             </div>
         </div>
     </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.process-card, .feature-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            cards.forEach(card => {
-                card.style.opacity = 0;
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
-                observer.observe(card);
-            });
-        });
-    </script>
+    <!-- Process Section -->
+    <section class="section container">
+        <h2>Process of Tokenization</h2>
+        <div class="grid-2col">
+            <div>
+                <h3>Property Valuation</h3>
+                <p>A certified appraiser evaluates the property and determines its market value.</p>
+            </div>
+            <div>
+                <h3>NFT Creation</h3>
+                <p>The property is tokenized onto the blockchain as a NFT.</p>
+            </div>
+            <div>
+                <h3>Marketplace Listing</h3>
+                <p>The tokenized property is listed on the platform for users to buy and sell.</p>
+            </div>
+            <div>
+                <h3>Smart Contracts</h3>
+                <p>A smart contract is used to manage the distribution and transfer of funds during sale.</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
